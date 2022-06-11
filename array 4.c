@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+  int n, i, j ;
+
+  printf("Enter the number of rows: ");
+  scanf("%d",&n);
+
+  int pascal[n][n];
+  for(i=0;i<n;++i)
+  {
+
+    for(int s=1; s<=40-i; s++)
+    printf(" "); //space
+
+    for(int j=0;j<=i;++j)
+    {
+      if(j==0||j==i) pascal[i][j]=1;
+      else
+      pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j];
+
+      printf("%d ",pascal[i][j]);
+    }
+
+    printf("\n");
+  }
+getch();
+  return 0 ;
+}
+
+
+
